@@ -1,0 +1,274 @@
+﻿<Page
+    x:Class="LifeTracer.Search"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LifeTracer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid Name="bg" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="10" Grid.RowSpan="6">
+            <Grid.Background>
+                <ImageBrush ImageSource="Assets/foot.jpg" Stretch="UniformToFill"/>
+            </Grid.Background>
+        </Grid>
+
+        <Grid Name="from" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="1" Grid.RowSpan="1" Margin="20">
+            <Grid.Background>
+                <ImageBrush ImageSource="Assets/from.png" Stretch="Uniform"/>
+            </Grid.Background>
+        </Grid>
+
+        <Grid Name="to" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="1" Grid.RowSpan="1" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="17*"/>
+                <ColumnDefinition Width="15*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.Background>
+                <ImageBrush ImageSource="Assets/to.png" Stretch="Uniform"/>
+            </Grid.Background>
+        </Grid>
+
+        <Grid Name="from_year" Grid.Column="3" Grid.Row="2" Grid.ColumnSpan="1" Grid.RowSpan="1" Margin="20">
+            <Grid.Background>
+                <ImageBrush ImageSource="Assets/year.png" Stretch="Uniform"/>
+            </Grid.Background>
+        </Grid>
+
+        <Grid Name="to_year" Grid.Column="3" Grid.Row="3" Grid.ColumnSpan="1" Grid.RowSpan="1" Margin="20">
+            <Grid.Background>
+                <ImageBrush ImageSource="Assets/year.png" Stretch="Uniform"/>
+            </Grid.Background>
+        </Grid>
+
+        <Grid Name="from_month" Grid.Column="6" Grid.Row="2" Grid.ColumnSpan="1" Grid.RowSpan="1" Margin="20">
+            <Grid.Background>
+                <ImageBrush ImageSource="Assets/month.png" Stretch="Uniform"/>
+            </Grid.Background>
+        </Grid>
+
+        <Grid Name="to_month" Grid.Column="6" Grid.Row="3" Grid.ColumnSpan="1" Grid.RowSpan="1" Margin="20">
+            <Grid.Background>
+                <ImageBrush ImageSource="Assets/month.png" Stretch="Uniform"/>
+            </Grid.Background>
+        </Grid>
+
+        <Grid Name="from_day" Grid.Column="9" Grid.Row="2" Grid.ColumnSpan="1" Grid.RowSpan="1" Margin="20">
+            <Grid.Background>
+                <ImageBrush ImageSource="Assets/day.png" Stretch="Uniform"/>
+            </Grid.Background>
+        </Grid>
+
+        <Grid Name="to_day" Grid.Column="9" Grid.Row="3" Grid.ColumnSpan="1" Grid.RowSpan="1" Margin="20">
+            <Grid.Background>
+                <ImageBrush ImageSource="Assets/day.png" Stretch="Uniform"/>
+            </Grid.Background>
+        </Grid>
+
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="8" Margin="0,0,20,0">
+            <TextBox x:Name="SearchContent" FontSize="36" PlaceholderText="输入要查找的日记标签，用空格分隔多个标签" Width="848" Margin="0,60,0,0" />
+            <Button x:Name="beginSearch" Background="#FF50DD50" Content="&#xE10B;" FontFamily="Segoe MDL2 Assets" FontSize="48" VerticalAlignment="Stretch" Width="160" Click="beginSearch_Click" Margin="0,60,0,0"/>
+        </StackPanel>
+
+        <Grid Name="mood_search" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="8" >
+            <Grid.Background>
+                <ImageBrush ImageSource="Assets/mood_search.png" Stretch="Uniform"/>
+            </Grid.Background>
+        </Grid>
+
+        <Grid Name="according_mood" Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="3" >
+            <ComboBox Name="filterMood" FontSize="36" HorizontalAlignment="Stretch"  Grid.RowSpan="1" VerticalAlignment="Top" Width="502" Height="120" Margin="0,10" Grid.Column="2" Grid.Row="4">
+                <x:String>不限</x:String>
+                <x:String>angry</x:String>
+                <x:String>boring</x:String>
+                <x:String>depressed</x:String>
+                <x:String>happy</x:String>
+                <x:String>jealous</x:String>
+                <x:String>plain</x:String>
+                <x:String>sad</x:String>
+                <x:String>smiling</x:String>
+                <x:String>upsetting</x:String>
+            </ComboBox>
+        </Grid>
+
+        <Grid Name="day_search" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="8" >
+            <Grid.Background>
+                <ImageBrush ImageSource="Assets/day_search.png" Stretch="Uniform"/>
+            </Grid.Background>
+        </Grid>
+
+
+        <Grid Name="from_search_year" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" >
+
+            <ComboBox x:Name="filterYear1" FontSize="36" HorizontalAlignment="Left" VerticalAlignment="Top" Width="256" Height="120" Margin="0,10">
+                <x:String>不限</x:String>
+                <x:Int32>2016</x:Int32>
+                <x:Int32>2017</x:Int32>
+                <x:Int32>2018</x:Int32>
+                <x:Int32>2019</x:Int32>
+                <x:Int32>2020</x:Int32>
+            </ComboBox>
+
+        </Grid>
+
+        <Grid Name="from_search_month" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2" >
+            <ComboBox x:Name="filterMonth1" FontSize="36" HorizontalAlignment="Left" Margin="0,10" VerticalAlignment="Top" 
+                  Height="120" Width="256">
+                <x:Int32>1</x:Int32>
+                <x:Int32>2</x:Int32>
+                <x:Int32>3</x:Int32>
+                <x:Int32>4</x:Int32>
+                <x:Int32>5</x:Int32>
+                <x:Int32>6</x:Int32>
+                <x:Int32>7</x:Int32>
+                <x:Int32>8</x:Int32>
+                <x:Int32>9</x:Int32>
+                <x:Int32>10</x:Int32>
+                <x:Int32>11</x:Int32>
+                <x:Int32>12</x:Int32>
+            </ComboBox>
+
+        </Grid>
+
+        <Grid Name="from_search_day" Grid.Column="7" Grid.Row="2" Grid.ColumnSpan="2" >
+
+            <ComboBox x:Name="filterDay1" FontSize="36" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                  Height="120" Width="256" Margin="0,10">
+                <x:Int32>1</x:Int32>
+                <x:Int32>2</x:Int32>
+                <x:Int32>3</x:Int32>
+                <x:Int32>4</x:Int32>
+                <x:Int32>5</x:Int32>
+                <x:Int32>6</x:Int32>
+                <x:Int32>7</x:Int32>
+                <x:Int32>8</x:Int32>
+                <x:Int32>9</x:Int32>
+                <x:Int32>10</x:Int32>
+                <x:Int32>11</x:Int32>
+                <x:Int32>12</x:Int32>
+                <x:Int32>13</x:Int32>
+                <x:Int32>14</x:Int32>
+                <x:Int32>15</x:Int32>
+                <x:Int32>16</x:Int32>
+                <x:Int32>17</x:Int32>
+                <x:Int32>18</x:Int32>
+                <x:Int32>19</x:Int32>
+                <x:Int32>20</x:Int32>
+                <x:Int32>21</x:Int32>
+                <x:Int32>22</x:Int32>
+                <x:Int32>23</x:Int32>
+                <x:Int32>24</x:Int32>
+                <x:Int32>25</x:Int32>
+                <x:Int32>26</x:Int32>
+                <x:Int32>27</x:Int32>
+                <x:Int32>28</x:Int32>
+                <x:Int32>29</x:Int32>
+                <x:Int32>30</x:Int32>
+                <x:Int32>31</x:Int32>
+            </ComboBox>
+
+
+        </Grid>
+
+
+        <Grid Name="to_search_year" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" >
+
+            <ComboBox x:Name="filterYear2" FontSize="36" HorizontalAlignment="Left" VerticalAlignment="Top" 
+            Width="256" Height="120" Margin="0,10">
+                <x:String>不限</x:String>
+                <x:Int32>2016</x:Int32>
+                <x:Int32>2017</x:Int32>
+                <x:Int32>2018</x:Int32>
+                <x:Int32>2019</x:Int32>
+                <x:Int32>2020</x:Int32>
+            </ComboBox>
+
+        </Grid>
+
+        <Grid Name="to_search_month" Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="2" >
+
+            <ComboBox x:Name="filterMonth2" FontSize="36" HorizontalAlignment="Left" VerticalAlignment="Top" 
+            Height="120" Width="256" Margin="0,10">
+                <x:Int32>1</x:Int32>
+                <x:Int32>2</x:Int32>
+                <x:Int32>3</x:Int32>
+                <x:Int32>4</x:Int32>
+                <x:Int32>5</x:Int32>
+                <x:Int32>6</x:Int32>
+                <x:Int32>7</x:Int32>
+                <x:Int32>8</x:Int32>
+                <x:Int32>9</x:Int32>
+                <x:Int32>10</x:Int32>
+                <x:Int32>11</x:Int32>
+                <x:Int32>12</x:Int32>
+            </ComboBox>
+
+        </Grid>
+
+        <Grid Name="to_search_day" Grid.Column="7"  Grid.Row="3" Grid.ColumnSpan="2" >
+
+            <ComboBox x:Name="filterDay2" FontSize="36" HorizontalAlignment="Left" VerticalAlignment="Top" 
+            Height="120" Width="256" Margin="0,10">
+                <x:Int32>1</x:Int32>
+                <x:Int32>2</x:Int32>
+                <x:Int32>3</x:Int32>
+                <x:Int32>4</x:Int32>
+                <x:Int32>5</x:Int32>
+                <x:Int32>6</x:Int32>
+                <x:Int32>7</x:Int32>
+                <x:Int32>8</x:Int32>
+                <x:Int32>9</x:Int32>
+                <x:Int32>10</x:Int32>
+                <x:Int32>11</x:Int32>
+                <x:Int32>12</x:Int32>
+                <x:Int32>13</x:Int32>
+                <x:Int32>14</x:Int32>
+                <x:Int32>15</x:Int32>
+                <x:Int32>16</x:Int32>
+                <x:Int32>17</x:Int32>
+                <x:Int32>18</x:Int32>
+                <x:Int32>19</x:Int32>
+                <x:Int32>20</x:Int32>
+                <x:Int32>21</x:Int32>
+                <x:Int32>22</x:Int32>
+                <x:Int32>23</x:Int32>
+                <x:Int32>24</x:Int32>
+                <x:Int32>25</x:Int32>
+                <x:Int32>26</x:Int32>
+                <x:Int32>27</x:Int32>
+                <x:Int32>28</x:Int32>
+                <x:Int32>29</x:Int32>
+                <x:Int32>30</x:Int32>
+                <x:Int32>31</x:Int32>
+            </ComboBox>
+
+        </Grid>
+
+
+
+        <Button x:Name="QuickSearch" Content="切换至快速日记搜索" HorizontalAlignment="Stretch" Grid.Row="5" VerticalAlignment="Stretch" Grid.ColumnSpan="10" FontSize="36" Click="QuickSearch_Click" Background="{x:Null}" Margin="0,50,0,0" RequestedTheme="Dark"/>
+    </Grid>
+</Page>

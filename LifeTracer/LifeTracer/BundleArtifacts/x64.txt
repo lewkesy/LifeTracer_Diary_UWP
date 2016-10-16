@@ -1,0 +1,2 @@
+MainPackage=E:\coding_and_project\C# for boyan\LifeTracer\LifeTracer\bin\x64\Debug\LifeTracer_1.1.5.0_x64_Debug.appx
+SymbolPackage=C:\Users\周啸辰\Desktop\LifeTracer_1.1.5.0_Debug_Test\LifeTracer_1.1.5.0_x64_Debug.appxsym

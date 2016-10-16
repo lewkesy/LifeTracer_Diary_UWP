@@ -1,0 +1,1 @@
+E:\coding_and_project\C# for boyan\LifeTracer\LifeTracer\LifeTracer.csproj;x86

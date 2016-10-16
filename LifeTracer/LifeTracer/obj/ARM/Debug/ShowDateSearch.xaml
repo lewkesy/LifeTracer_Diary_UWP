@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="LifeTracer.ShowDateSearch"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LifeTracer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:ConnectionId='1' Name="background">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="141*"/>
+            <ColumnDefinition Width="1139*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="137*"/>
+            <RowDefinition Height="584*"/>
+        </Grid.RowDefinitions>
+
+        <Button x:ConnectionId='2' Name="Emoji"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" >
+            <Button.Background>
+                <ImageBrush ImageSource="Assets/emotion/plain.png"/>
+            </Button.Background>
+            <Button.Foreground>
+                <ImageBrush Stretch="Fill"/>
+            </Button.Foreground>
+        </Button>
+        <TextBlock x:ConnectionId='3' Name="QuickDiary" FontSize="36" RelativePanel.RightOf="Emoji" VerticalAlignment="Center" Grid.Column="1" Margin="30,45,30,44" />
+        <ScrollViewer Grid.Row="1"
+                      HorizontalScrollBarVisibility="Auto"
+                      VerticalScrollBarVisibility="Disabled" Grid.ColumnSpan="2">
+
+            <TextBlock x:ConnectionId='4' Name="DailyDiary" FontSize="34" TextWrapping="Wrap"  Margin="10"/>
+        </ScrollViewer>
+
+    </Grid>
+</Page>
+
